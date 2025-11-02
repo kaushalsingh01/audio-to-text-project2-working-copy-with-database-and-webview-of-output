@@ -1,0 +1,5 @@
+install vosk model file and download to the folder as specified
+
+https://alphacephei.com/vosk/models
+folder "vosk-model-small-en-us-0.15"
+or as needed , and specified by the language and packages (small or big)
