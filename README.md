@@ -1,13 +1,83 @@
-# audio-to-text-project2-working-copy-with-database-and-webview-of-output
-audio to text project2 working copy with database and webview of output
-A>
-1> a program to listen to my audio and capture the words spoken in a local database ( even without internet using vosk small english package 40 mb) so it works even if there is no internet. 
-2> capture the audio sentences in blocks of 5 seconds 30 seconds or 1 min 
-3> validate from internet , when internet is available if the word spoken and audio captured are same and correct. if not then flag some where for audio input
-4> if the word spoken is captured correctly in text and audio, then add that word to the local dictionary.
-B>
-1> capture the camera, show the camera feed in the screen and some message like a question on the left, helpful pointers for answer on the right and the answer actually spoken on the bottom of the page in english , hindi , spanish and in the language chosen
-2> audio first, ( with showing text on the screen for question, helpful pointers for answers , and actual answer spoken
-3> incremental learning like if i make a mistake then a smaller or easier question pointing that exact concept that i might have made mistake in the past, and if i gave the answer correctly then make the next question more complicated in term of concept . 
-4> keep audio as first input preference from user , but allow text writing input as well.
-5> now i can paste a paragraph of a tech definition and it will create questions and answers in increasing levels of difficulty according to that input given.
+# 🎙️ Audio-to-Text Project with Basic Teaching Mode
+
+A Flask-based application that converts speech to text using the **Vosk** speech recognition engine. The project also includes a **basic Teaching Mode**, which provides simple responses or translations based on recognized audio commands.
+
+---
+
+## 🚀 Features
+
+* 🎧 **Speech-to-Text Conversion** using Vosk
+* 🔁 **Continuous Listening** (keeps listening until stopped)
+* 💾 **User Data Storage**
+
+  * Audio files stored locally
+  * Transcribed text stored in SQLite database
+* 🧩 **Basic Teaching Mode**
+
+  * Responds to simple teaching-related commands
+  * Example: Translate English to Hindi or explain simple terms
+* 🌐 **Flask-based Web UI** for easy use and testing
+
+---
+
+## ⚙️ Setup Instructions
+
+1. **Clone this repository**
+
+   ```bash
+   git clone https://github.com/brajesh2020/audio-to-text-project2-working-copy-with-database-and-webview-of-output.git
+   cd audio-to-text-project2-working-copy-with-database-and-webview-of-output
+   ```
+
+2. **Create and activate a virtual environment**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Download a Vosk Model**
+
+   * Visit [Vosk Models](https://alphacephei.com/vosk/models)
+   * Download a small model (e.g., `vosk-model-small-en-us-0.15`)
+   * Extract it inside a folder named `model/` in the project directory
+
+5. **Run the app**
+
+   ```bash
+   python app.py
+   ```
+
+   Then open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your browser.
+
+---
+
+## 🧠 Basic Teaching Mode
+
+Currently, the teaching mode works in a **simple and experimental** way:
+
+* Detects keywords like “hello”, “data”, or “math”
+* Provides short text-based responses or translations
+* Ideal as a **proof of concept** for future interactive learning features
+
+Example:
+
+> You say: “What is math?”
+> App replies: “Mathematics is the study of numbers, shapes, and patterns (+,-,*,/)”
+
+---
+
+## 🧰 Tech Stack
+
+* **Python**
+* **Flask**
+* **Vosk** (for offline speech recognition)
+* **SQLite** (local database)
+
