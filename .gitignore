@@ -1,0 +1,5 @@
+.venv/
+recordings/
+*.db
+vosk-model-small-en-us-0.15/
+__pycache__/
